@@ -16,46 +16,56 @@
 
   - 이중에 하나가 자바스크립트
 ### ⅲ. Node.js란?
-"Node.js is an open-source, cross-platform, back-end JavaScript runtime environment that runs on the V8 engine and executes JavaScript cod outside a web browser" - Node.js를 정의하는 문장
-우리가 자바스크립트 언어의 문법에 맞게 코딩을 했을 때 컴퓨터가 이를 해석해서 처리할 수 있도록 해주는 일종의 전용 번역기
-이전에는 웹브라우저에만 있었지만, 우리 커뮤터에 Node.js만 설치해주면 웹브라우저가 아닌 곳에서도 자바 스크립트 코드를 실행하고 그 결과물을 확인할 수 있음
-ⅳ. Hello World 출력해보기
-원하는 폴더 위치에 폴더를 생성함 
- VSCode(Visual Studio Code, 코딩을 위한 전용에디터)를 실행하고 생성된 폴더를 열어줌 
-New File을 클릭하여 새로운 파일을 만들고 hello.js라고 저장함, "."뒤에 js는 자바스크립트 파일이라는 것을 알려주는 확장자명
+- "Node.js is an open-source, cross-platform, back-end JavaScript runtime environment that runs on the V8 engine and executes JavaScript cod outside a web browser" - Node.js를 정의하는 문장
+
+- 우리가 자바스크립트 언어의 문법에 맞게 코딩을 했을 때 컴퓨터가 이를 해석해서 처리할 수 있도록 해주는 일종의 전용 번역기
+
+- 이전에는 웹브라우저에만 있었지만, 우리 커뮤터에 Node.js만 설치해주면 웹브라우저가 아닌 곳에서도 자바 스크립트 코드를 실행하고 그 결과물을 확인할 수 있음
+
+### ⅳ. Hello World 출력해보기
+- 원하는 폴더 위치에 폴더를 생성함 
+
+- VSCode(Visual Studio Code, 코딩을 위한 전용에디터)를 실행하고 생성된 폴더를 열어줌 
+
+- New File을 클릭하여 새로운 파일을 만들고 hello.js라고 저장함, "."뒤에 js는 자바스크립트 파일이라는 것을 알려주는 확장자명
+
+```
 console.log('Hello World')
+
 // Hello World 문자열을 출력하는 명령어, 문자열은 '', ""로 감싸야함
 // console.log는 데이터들을 출력할 수 있는 명령어임
 // //은 주석으로 컴퓨터가 해석해서 실행하는 부분이 아니기 때문에 
 // 코딩을 하다가 설명을 달고 싶은 것들이 있을때 사용함
- 
+```
 
- 
+- 터미널 실행후 node hello.js라고 타이핑 후 엔터를 누르면 HelloWorld 출력
 
-터미널 실행후 node hello.js라고 타이핑 후 엔터를 누르면 HelloWorld 출력
-터미널에서 node hello.js라고 명령하묜 컴퓨터는 Node.js를 활용해 hello.js파일을 해석하고 그 결과물을 출력해줌
-2. 변수(Variable)
-ⅰ.  변수란
-값(데이터)을 저장해놓고 사용하기 위해 변수라는 것을 사용함
-변수는 저장해놓은 값을 가리키는 일종의 이름표
-변수를 사용하면 해당 데이터가 의미하는 바를 변수이름을 통해 정확히 표현할 수 있고, 계속해서 재사용할 수 있음
-ⅱ. let
-변수를 선언할 때는 let이라는 키워드를 사용, let 변수이름 = 값
-변수 <변수이름> 를 선언했고 해당 변수에 <값>을 할당했다고 함
+- 터미널에서 node hello.js라고 명령하묜 컴퓨터는 Node.js를 활용해 hello.js파일을 해석하고 그 결과물을 출력해줌
+# 2. 변수(Variable)
+### ⅰ.  변수란
+- 값(데이터)을 저장해놓고 사용하기 위해 변수라는 것을 사용함
+- 변수는 저장해놓은 값을 가리키는 일종의 이름표
+- 변수를 사용하면 해당 데이터가 의미하는 바를 변수이름을 통해 정확히 표현할 수 있고, 계속해서 재사용할 수 있음
+### ⅱ. let
+- 변수를 선언할 때는 let이라는 키워드를 사용, let 변수이름 = 값
+- 변수 <변수이름> 를 선언했고 해당 변수에 <값>을 할당했다고 함
+```
 let name = '지영'    // name 변수에 홍길동 이라는 값을 할당
 console.log(name)    // 변수 name이 가리키고 있는 값 홍길동을 출력
 
 name = '지수'        // 선언했던 name 변수에 지수 라는 값을 재할당
 console.log(name)    // 변수 name이 가리키고 있는 값 지수를 출력
-
 // 코드는 항상 위에서 아래로 해석됨
 // 한구문이 끝나면 세미콜론(;)을 사용해서 코딩이 끝났다는 아낸를 하지만 최근 생략해서 많이 사용
-ⅲ. const
-변수를 선언할 때 const라는 키워드를 사용, const 변수이름 = 값
-const는 let과 달리 변수에 값을 재할당 할 필요가 없을 때 사용
-한번 값을 할당하게 되면 다른 값을 할당할 수 없으니 주의가 필요
+```
+
+### ⅲ. const
+- 변수를 선언할 때 const라는 키워드를 사용, const 변수이름 = 값
+- const는 let과 달리 변수에 값을 재할당 할 필요가 없을 때 사용
+- 한번 값을 할당하게 되면 다른 값을 할당할 수 없으니 주의가 필요
+```
 const name = '지수'  // name 변수에 지수라는 값을 할당
 console.log(name)    // 변수 name이 가리키고 있는 값 지수를 출력
 
 name = '지영'        // 선언했던 name 변수에 '지영'이라는 값을 재할당하면 Type Error 발생
- 
+```
