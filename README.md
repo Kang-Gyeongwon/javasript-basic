@@ -361,3 +361,90 @@ notebook.printInfo()		// 상품명: Apple Macbook, 가격: 2000000원, 메소드
 > - 클래스를 활용해 객체를 만드는 것과 객체 리터럴은 동일함
 > - 코드의 재사용성 때문에 클래스를 정의함
 > - 한번 클래스를 만들어두면 같은 속성과 메소드를 갖고 있는 객체를 훨씬 간결한 코드로 작성 가능
+
+# 10. 배열
+
+### ⅰ. 배열(Array)이란?
+
+- 같은 형식의 많은 데이터를 순서대로 저장하고자 할 때는 데이터의 수만큼 변수들을 선언해줄 수 밖에 없지만, 이때 사용하는 것이 배열
+- 같은 타입의 데이터들을 하나의 변수에 할당하여 관리하기 위해서 사용하는 데이터 타입
+
+### ⅱ .  배열의 선언
+- 배열을 선언하는 방법은 두 가지가 있음
+- const 변수명 = new Array(.., ..,  ...... )
+- const 변수명 = [...., ...., ..., ......]
+```
+// 1, 2, 3, 4, 5 데이터들을 순서대로 갖고 있는 배열을 만들어서
+// arr 라는 변수에 할당
+
+// 1번째 방법
+const arr1 = new Array(1, 2, 3, 4, 5)
+
+// 2번째 방법
+const arr2 = [1, 2, 3, 4, 5]
+```
+- 1번째 방법 
+  - 클래스를 활용해 객체 만든 것과 유사함
+
+  -> Array라는 클래스를 활용해서 객체를 만듦
+  - 직접 Array라는 클래스를 선언한 적은 없지만 자바스크립트 내부적으로 이미 갖고 있음
+- 2번째 방법
+  - 배열을 바로 만드는 방법
+  - 대괄호 안에 배열로 저장할 데이터를 쭉 나열해 주면 됨
+  - 보통 이 방법을 많이 사용함
+
+### ⅲ.  배열 안의 데이터
+
+- 배열에 있는 데이터 각각을 요소(element)라고 함
+- 배열에서는 인덱스(index)가 객체의 속성명처럼 요소들에 쉽게 접근해서 바로 사용할 수 있음.
+- 인덱스는 배열 안의 데이터들이 자리잡은 순서, 인덱스는 0부터 시작함
+- 같은 형식의 데이터를 순서대로 저장할 수 있는 이점이 있음
+
+### ⅳ. 배열의 길이
+
+- 배열은 같은 형식의 데이터를 순서대로 저장하는 것인데, 이 배열이 얼마나 많은 데이터를 갖고 있는지, 그 길이를 알 필요가 있음.
+- 배열의 요소가 많이 있다면 직접 셀 수 없기 때문에 이때 사용하는 속성이 length
+```
+const rainbowColors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
+
+console.log(rainbowColors.length)   // 7
+console.log(rainbowColors.length - 1)
+// 배열의 마지막 요소를 찾는 방법 -> why? 요소가 0부터 시작하기 때문에 1을 빼줌
+```
+
+### ⅴ. 요소 추가 삭제
+
+- 배열을 선언하고 난 이후 새로운 요소를 더하거나 뺄 때 사용하는 메소드가 push와 pop
+- 배열도 객체처럼 속성과 메소드를 가지고 있음
+```
+const rainbowColors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
+
+rainbowColors.push('ultraviolet')	// 배열 맨 마지막에 ultraviolet 추가
+console.log(rainbowColors)			// 추가된 요소가 포함된 rainbowColors 출력
+
+rainbowColors.pop()					// 배열의 맨 마지막 요소 제거
+console.log(rainbowColors)			// ultraviolet가 제거된 rainbowColors 출력
+```
+
+### ⅵ. 배열과 반복문
+
+- 배열의 요소들을 하나씩 꺼내서 출력해야 하는 코드를 작성해야 할때, 반복문을 활용함
+```
+const rainbowColors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
+
+for (let i = 0; i < rainbowColors.length; i++) {
+  console.log(rainbowColors[i])		// 인뎃스로 배열에 순차적으로 접근
+}
+```
+- 배열의 인덱스는 0부터 시작이므로 변수 i의 값을 0으로 시작
+- 변수 i가 배열의 길이보다 작을 때만 반복문 안의 코드를 실행하고, 1씩 증가해서 모든 요소들을 빠짐없이 출력
+```
+// 간단한 형식의 for문
+const rainbowColors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
+
+for (const color of rainbowColors) {		// 변수 const를 선언하고 of 키워드를 사용
+  console.log(color)
+}
+```
+- 배열에서 요소들을 차례대로 하나씩 찾아 color라는 변수에 할당함
+- 자동으로 배열의 끝까지 반복하기 때문에 쓰기 간편함
